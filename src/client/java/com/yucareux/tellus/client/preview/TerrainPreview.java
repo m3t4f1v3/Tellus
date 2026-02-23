@@ -195,8 +195,8 @@ public final class TerrainPreview implements AutoCloseable {
 		double metersPerDegree = EQUATOR_CIRCUMFERENCE / 360.0;
 		double worldScale = settings.worldScale();
 		double blocksPerDegree = metersPerDegree / worldScale;
-		double centerX = settings.spawnLongitude() * blocksPerDegree;
-		double centerZ = -settings.spawnLatitude() * blocksPerDegree;
+		double centerX = 0.0;
+		double centerZ = 0.0;
 		double radius = GRID_RADIUS_BLOCKS;
 		double step = (radius * 2.0) / (size - 1);
 

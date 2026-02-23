@@ -1,5 +1,9 @@
 package com.yucareux.tellus.worldgen;
 
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Stream;
+
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
@@ -9,9 +13,9 @@ import com.mojang.serialization.MapEncoder;
 import com.mojang.serialization.MapLike;
 import com.mojang.serialization.RecordBuilder;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Stream;
+import com.yucareux.tellus.worldgen.EarthGeneratorSettings.DemProvider;
+import com.yucareux.tellus.worldgen.EarthGeneratorSettings.DistantHorizonsRenderMode;
+
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.dimension.DimensionType;
 
@@ -65,8 +69,8 @@ public record EarthGeneratorSettings(
 	public static final int AUTO_ALTITUDE = Integer.MIN_VALUE;
 	public static final int AUTO_SEA_LEVEL = Integer.MIN_VALUE + 1;
 
-	public static final int MIN_WORLD_Y = -2032;
-	public static final int MAX_WORLD_HEIGHT = 4064;
+	public static final int MIN_WORLD_Y = -11040;
+	public static final int MAX_WORLD_HEIGHT = 8848 - MIN_WORLD_Y;
 	public static final int MAX_WORLD_Y = MIN_WORLD_Y + MAX_WORLD_HEIGHT - 1;
 
 	private static final int ALTITUDE_TOLERANCE = 50;
